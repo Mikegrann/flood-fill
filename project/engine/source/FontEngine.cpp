@@ -199,7 +199,7 @@ void FontEngine::renderText(std::string text, float x, float y) {
     float xCur = x;
     float yCur = y;
     unsigned int c = 0;
-    Point coords[VERT_COUNT * text.length()];
+    std::vector<Point> coords(VERT_COUNT * text.length());
     for (unsigned int i = 0; i < text.length(); i++) {
         if (text[i] == '\n') {
             xCur = x;
@@ -251,7 +251,7 @@ void FontEngine::renderText(std::string text, float x, float y) {
     glVertexAttribPointer(coord, 4, GL_FLOAT, GL_FALSE, 0, 0);
     
 
-    glBufferData(GL_ARRAY_BUFFER, sizeof(coords), coords, GL_DYNAMIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, coords.size() * sizeof(Point), &coords[0], GL_DYNAMIC_DRAW);
     glDrawArrays(GL_TRIANGLES, 0, c);
 
     glDisableVertexAttribArray(coord);
@@ -298,8 +298,8 @@ void FontEngine::renderBillBoardText(std::string text, float x, float y, float z
     float yCur = y;
     float zCur = z;
     unsigned int c = 0;
-    WorldPoint b_positions[VERT_COUNT * text.length()];
-    TextCoord b_coords[VERT_COUNT * text.length()];
+	std::vector<WorldPoint> b_positions(VERT_COUNT * text.length());
+    std::vector<TextCoord> b_coords(VERT_COUNT * text.length());
     for (unsigned int i = 0; i < text.length(); i++) {
         if (text[i] == '\n') {
             xCur = x;
@@ -359,12 +359,12 @@ void FontEngine::renderBillBoardText(std::string text, float x, float y, float z
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glEnableVertexAttribArray(billboard_pos);
     glVertexAttribPointer(billboard_pos, 3, GL_FLOAT, GL_FALSE, 0, 0);  
-    glBufferData(GL_ARRAY_BUFFER, sizeof(b_positions), b_positions, GL_DYNAMIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, b_positions.size() * sizeof(WorldPoint), &b_positions[0], GL_DYNAMIC_DRAW);
     
     // Texture Coords
     glEnableVertexAttribArray(billboard_coord);
     glVertexAttribPointer(billboard_coord, 2, GL_FLOAT, GL_FALSE, 0, 0);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(b_coords), b_coords, GL_DYNAMIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, b_coords.size() * sizeof(TextCoord), &b_coords[0], GL_DYNAMIC_DRAW);
     
     // Draw
     glDrawArrays(GL_TRIANGLES, 0, c);
