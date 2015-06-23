@@ -6,6 +6,7 @@
 #include "glm/glm.hpp"
 
 #include "pointer_macros.h"
+#include <string>
 
 class LevelManager{
 
