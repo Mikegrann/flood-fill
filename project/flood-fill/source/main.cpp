@@ -306,17 +306,17 @@ void createMaterials(){
                             4.0f));
     MaterialManager::addMaterial("FlatBlue", material2);
 
-    MaterialPtr material3(new Material(glm::vec3(0.3, 0.8, 0.3),
-                            glm::vec3(0.0, 0.9, 0.3),
-                             glm::vec3(0.3, 0.8, 0.3),
-                            4.0f));
-    MaterialManager::addMaterial("FlatGreen", material3);
-
-    MaterialPtr material4(new Material(glm::vec3(0.8, 0.3, 0.3),
+    MaterialPtr material3(new Material(glm::vec3(0.8, 0.3, 0.3),
                             glm::vec3(0.0, 0.3, 0.3),
                              glm::vec3(0.8, 0.3, 0.3),
                             4.0f));
-    MaterialManager::addMaterial("FlatRed", material4);
+    MaterialManager::addMaterial("FlatRed", material3);
+
+    MaterialPtr material4(new Material(glm::vec3(0.8, 0.3, 0.8),
+                            glm::vec3(0.0, 0.3, 0.0),
+                             glm::vec3(0.8, 0.3, 0.8),
+                            4.0f));
+    MaterialManager::addMaterial("FlatPurple", material4);
 
     MaterialPtr material5(new Material(glm::vec3(1.0, 1.0, 1.0),
                             glm::vec3(0.0, 0.0, 0.0),
@@ -324,11 +324,11 @@ void createMaterials(){
                             4.0f));
     MaterialManager::addMaterial("None", material5);
 
-    MaterialPtr material6(new Material(glm::vec3(0.8, 0.3, 0.3),
-                            glm::vec3(0.9, 0.3, 0.1),
-                            glm::vec3(0.8, 0.3, 0.1),
+    MaterialPtr material6(new Material(glm::vec3(0.8, 0.3, 0.8),
+                            glm::vec3(0.9, 0.3, 0.9),
+                            glm::vec3(0.8, 0.3, 0.8),
                             4.0f));
-    MaterialManager::addMaterial("Red", material6);
+    MaterialManager::addMaterial("Purple", material6);
 
     MaterialPtr material7(new Material(glm::vec3(0.1, 0.1, 0.1),
                                        glm::vec3(0.13, 0.13, 0.13),
@@ -342,7 +342,11 @@ void createMaterials(){
                                        4.0f));
     MaterialManager::addMaterial("White", material8);
 
-
+	MaterialPtr material9(new Material(glm::vec3(0.8, 0.3, 0.3),
+									   glm::vec3(0.9, 0.3, 0.1),
+									   glm::vec3(0.8, 0.3, 0.1),
+									   4.0f));
+	MaterialManager::addMaterial("Red", material9);
 
     MaterialPtr removeBlockMat(new Material(glm::vec3(0.5, 0.5, 0.5),
                                             glm::vec3(0.0, 0.0, 0.0),

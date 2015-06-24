@@ -29,8 +29,8 @@
 #include "menu.hpp"
 
 #define BLUE    1
-#define GREEN   2
-#define RED     4
+#define RED   2
+#define PURPLE     4
 #define GREY    8
 
 Player::Player(CameraPtr _camera, int _initialColor)
@@ -253,12 +253,12 @@ void Player::collided(CollisionObjectPtr collidedWith) {
     if(PTR_CAST(FluidBox, collidedWith)->getColorMask() & BLUE) { //Blue filled
         jumpMultiplier = 2;
     } 
-    else if(PTR_CAST(FluidBox, collidedWith)->getColorMask() & RED) { //Green filled ... idk why
+    else if(PTR_CAST(FluidBox, collidedWith)->getColorMask() & PURPLE) { //Red filled ... idk why
         moveMultiplier = 2;
         jumpMultiplier = 2;
         activateCameraWarp = true;
     }
-    else if(PTR_CAST(FluidBox, collidedWith)->getColorMask() & GREEN) {//Red filled ... trying to fix
+    else if(PTR_CAST(FluidBox, collidedWith)->getColorMask() & RED) {//Purple filled ... trying to fix
         moveMultiplier = 2;
         activateCameraWarp = true;
     }

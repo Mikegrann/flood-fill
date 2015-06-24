@@ -33,12 +33,12 @@ const int LevelTemplate::AIR                   =  0;
 const int LevelTemplate::SOLID_CUBE            =  1;
 const int LevelTemplate::AVAILABLE_FILL_SPACE  =  2;
 const int LevelTemplate::CHANGE_COLOR_BLUE     =  3;
-const int LevelTemplate::CHANGE_COLOR_GREEN    =  4;
-const int LevelTemplate::CHANGE_COLOR_RED      =  5;
+const int LevelTemplate::CHANGE_COLOR_RED    =  4;
+const int LevelTemplate::CHANGE_COLOR_PURPLE      =  5;
 const int LevelTemplate::TOGGLE_FILL           =  6;
-const int LevelTemplate::FLUID_GREEN           =  7;
+const int LevelTemplate::FLUID_RED           =  7;
 const int LevelTemplate::WINNING_BLOCK         =  8;
-const int LevelTemplate::FLUID_RED             =  9;
+const int LevelTemplate::FLUID_PURPLE             =  9;
 const int LevelTemplate::FLUID_BLUE            =  10;
 const int LevelTemplate::FLUID_DRAIN           =  11;
 const int LevelTemplate::INVISIBLE_BLOCK       =  12;
@@ -225,7 +225,7 @@ GameObjectPtr LevelTemplate::createVoxel(int id, int i, int j, int k){
         return c;
         break;
     }
-    case CHANGE_COLOR_GREEN:
+    case CHANGE_COLOR_RED:
     {
         ColorChangePtr c(new ColorChange(glm::vec3(minx + i * 2 + 1, miny + j * 2 + 1, minz + (k * 2 + 1)), 2));
         c->setup();
@@ -234,7 +234,7 @@ GameObjectPtr LevelTemplate::createVoxel(int id, int i, int j, int k){
         return c;
         break;
     }
-    case FLUID_GREEN:
+    case FLUID_RED:
     {
         FluidBoxPtr c(new FluidBox(glm::vec3(minx + i * 2 + 1, miny + j * 2 + 1, minz + (k * 2 + 1)), 2));
         c->setup();
@@ -243,7 +243,7 @@ GameObjectPtr LevelTemplate::createVoxel(int id, int i, int j, int k){
         return c;
         break;
     }
-    case CHANGE_COLOR_RED:
+    case CHANGE_COLOR_PURPLE:
     {
         ColorChangePtr c(new ColorChange(glm::vec3(minx + i * 2 + 1, miny + j * 2 + 1, minz + (k * 2 + 1)), 4));
         c->setup();
@@ -253,7 +253,7 @@ GameObjectPtr LevelTemplate::createVoxel(int id, int i, int j, int k){
         return c;
         break;
         }
-    case FLUID_RED:
+    case FLUID_PURPLE:
     {
         FluidBoxPtr c(new FluidBox(glm::vec3(minx + i * 2 + 1, miny + j * 2 + 1, minz + (k * 2 + 1)), 4));
         c->setup();
@@ -294,7 +294,7 @@ bool LevelTemplate::isFilledWithPaint(glm::vec3 pos){
        return false;
     }
     int type = typeGrid->getValue(pos.x, pos.y, pos.z);
-    return type == FLUID_BLUE || type == FLUID_GREEN || type == FLUID_RED;
+    return type == FLUID_BLUE || type == FLUID_RED || type == FLUID_PURPLE;
 }
 
 bool LevelTemplate::isEmpty(glm::vec3 pos){

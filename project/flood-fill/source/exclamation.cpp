@@ -37,8 +37,8 @@ void Exclamation::setup() {
     materialIndex = 0;
     useBlackMaterial = true;
     availableMaterials.push_back(MaterialManager::getMaterial("Black"));
-    availableMaterials.push_back(MaterialManager::getMaterial("Red"));
-    availableMaterials.push_back(MaterialManager::getMaterial("FlatGreen"));
+    availableMaterials.push_back(MaterialManager::getMaterial("Purple"));
+    availableMaterials.push_back(MaterialManager::getMaterial("FlatRed"));
     availableMaterials.push_back(MaterialManager::getMaterial("FlatBlue"));
 
     rotationAngle = 0.0f;

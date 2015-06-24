@@ -16,8 +16,8 @@
 #include "regular_polygons_render.hpp"
 
 #define BLUE    1
-#define GREEN   2
-#define RED     4
+#define RED   2
+#define PURPLE     4
 #define GREY    8
 
 FluidBox::FluidBox(glm::vec3 _position)
@@ -33,10 +33,10 @@ void FluidBox::setup() {
 
   if(colorMask & BLUE)
     color = "FlatBlue";
-  else if(colorMask & GREEN)
-    color = "FlatGreen";
   else if(colorMask & RED)
     color = "FlatRed";
+  else if(colorMask & PURPLE)
+    color = "FlatPurple";
   else if(colorMask & GREY)
     color = "FlatGrey";
 

@@ -17,8 +17,8 @@
 #include "level_template.hpp"
 
 #define BLUE    1
-#define GREEN   2
-#define RED     4
+#define RED   2
+#define PURPLE     4
 #define GREY    8
 
 FluidProjectile::FluidProjectile(glm::vec3 _position,
@@ -29,10 +29,10 @@ FluidProjectile::FluidProjectile(glm::vec3 _position,
     colorMask = _colorMask;
     if(_colorMask & BLUE)
       color = "FlatBlue";
-    else if(_colorMask & GREEN)
-      color = "FlatGreen";
     else if(_colorMask & RED)
       color = "FlatRed";
+    else if(_colorMask & PURPLE)
+      color = "FlatPurple";
     else if(_colorMask & GREY)
       color = "FlatGrey";
   }

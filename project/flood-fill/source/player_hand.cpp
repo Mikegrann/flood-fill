@@ -68,10 +68,10 @@ void PlayerHand::setColorMask(int color) {
         gun->setMaterial(MaterialManager::getMaterial("FlatBlue"));
         break;
     case 2:
-        gun->setMaterial(MaterialManager::getMaterial("FlatGreen"));
+        gun->setMaterial(MaterialManager::getMaterial("FlatRed"));
         break;
     case 4:
-        gun->setMaterial(MaterialManager::getMaterial("FlatRed"));
+        gun->setMaterial(MaterialManager::getMaterial("FlatPurple"));
         break;
      case 8:
          gun->setMaterial(MaterialManager::getMaterial("FlatGrey"));
@@ -105,9 +105,9 @@ MaterialPtr PlayerHand::returnMaterial(int i){
     if(i == 1)
         return MaterialManager::getMaterial("FlatBlue");
     else if(i == 2)
-        return MaterialManager::getMaterial("FlatGreen");
-    else if(i == 4)
         return MaterialManager::getMaterial("FlatRed");
+    else if(i == 4)
+        return MaterialManager::getMaterial("FlatPurple");
     else
         return MaterialManager::getMaterial("FlatGrey");
 }

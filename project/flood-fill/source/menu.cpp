@@ -60,13 +60,13 @@ void Menu::setup(){
 
     backButton = (MenuItemPtr)new SwitchPageButton("home","BACK", glm::vec4(0,0,0,.7), glm::vec4(1,0,0,1), glm::vec3(0, 0, 0), "FourPixel", 25 * Global::FbHeight/600.0);
     
-    level1 = (MenuItemPtr)new LevelButton(1, "Level1", glm::vec4(0,0,0,.7), glm::vec4(0,1,0,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight/600.0);
+    level1 = (MenuItemPtr)new LevelButton(1, "Level1", glm::vec4(0,0,0,.7), glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight/600.0);
     
-    level2 = (MenuItemPtr)new LevelButton(2, "Level2", glm::vec4(0,0,0,.7), glm::vec4(0,1,0,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight/600.0);
+    level2 = (MenuItemPtr)new LevelButton(2, "Level2", glm::vec4(0,0,0,.7), glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight/600.0);
 
-    level3 = (MenuItemPtr)new LevelButton(3, "Level3", glm::vec4(0,0,0,.7), glm::vec4(0,1,0,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight/600.0);
+    level3 = (MenuItemPtr)new LevelButton(3, "Level3", glm::vec4(0,0,0,.7), glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight/600.0);
 
-    //level4 = (MenuItemPtr)new LevelButton(4, "Boss", glm::vec4(0,0,0,.7), glm::vec4(0,1,0,1), glm::vec2(0,0), "FourPixel", 37 * Global::FbHeight/600.0);
+    //level4 = (MenuItemPtr)new LevelButton(4, "Boss", glm::vec4(0,0,0,.7), glm::vec4(1,0,1,1), glm::vec2(0,0), "FourPixel", 37 * Global::FbHeight/600.0);
 
     previous = (MenuItemPtr)new ListButton("levels", "previous", -1, "<<", glm::vec4(0,0,0,.2), glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 37 * Global::FbHeight/600.0);
     
@@ -114,12 +114,12 @@ void Menu::setup(){
 
     userGuide->addToPageInertText("blue", blue);
     
-    TextPtr green = (TextPtr)new Text("GREEN", glm::vec4(0,1,0,1), glm::vec3(0,0,0), "FourPixel", 25*Global::FbHeight/600.0);
+    TextPtr green = (TextPtr)new Text("RED", glm::vec4(1,0,0,1), glm::vec3(0,0,0), "FourPixel", 25*Global::FbHeight/600.0);
     green->setPosition(glm::vec3(0 - green->getTextWidth()/2.0/pixelDensityX - .25, .35, 0));
     
     userGuide->addToPageInertText("green", green);
     
-    TextPtr red = (TextPtr)new Text("RED", glm::vec4(1,0,0,1), glm::vec3(0,0,0), "FourPixel", 25*Global::FbHeight/600.0);
+    TextPtr red = (TextPtr)new Text("PURPLE", glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 25*Global::FbHeight/600.0);
     red->setPosition(glm::vec3(0 - red->getTextWidth()/2.0/pixelDensityX - .25, .25, 0));
 
     userGuide->addToPageInertText("red", red);

@@ -16,8 +16,8 @@
 
 
 #define BLUE    1
-#define GREEN   2
-#define RED     4
+#define RED   2
+#define PURPLE     4
 #define GREY    8
 
 
@@ -29,10 +29,10 @@ WaterSurface::WaterSurface(glm::vec3 _position, int _colorMask)
 void WaterSurface::setup() {
   if(colorMask & BLUE)
     color = "FlatBlue";
-  else if(colorMask & GREEN)
-    color = "FlatGreen";
   else if(colorMask & RED)
     color = "FlatRed";
+  else if(colorMask & PURPLE)
+    color = "FlatPurple";
   else if(colorMask & GREY)
     color = "FlatGrey";
 
@@ -243,10 +243,10 @@ float WaterSurface::floodFillTarget(glm::vec3 newPos, float lowestY) {
       if(typeGrid->getValue(newPos.x, newPos.y, newPos.z) != LevelTemplate::FLUID_DRAIN) {
         if(colorMask & BLUE)
             typeGrid->setValue(newPos.x, newPos.y, newPos.z, LevelTemplate::FLUID_BLUE);
-        else if(colorMask & GREEN)
-            typeGrid->setValue(newPos.x, newPos.y, newPos.z, LevelTemplate::FLUID_GREEN);
         else if(colorMask & RED)
             typeGrid->setValue(newPos.x, newPos.y, newPos.z, LevelTemplate::FLUID_RED);
+        else if(colorMask & PURPLE)
+            typeGrid->setValue(newPos.x, newPos.y, newPos.z, LevelTemplate::FLUID_PURPLE);
         else
             ASSERT(false, "There is no fluid type avaible");
       } else {

@@ -52,13 +52,13 @@ public:
     static const int SOLID_CUBE;
     static const int AVAILABLE_FILL_SPACE;
     static const int CHANGE_COLOR_BLUE;
-    static const int CHANGE_COLOR_GREEN;
     static const int CHANGE_COLOR_RED;
+    static const int CHANGE_COLOR_PURPLE;
     static const int CHANGE_COLOR_GREY;
     static const int WINNING_BLOCK;
     static const int FLUID_BLUE;
+    static const int FLUID_PURPLE;
     static const int FLUID_RED;
-    static const int FLUID_GREEN;
     static const int FLUID_DRAIN;
     static const int INVISIBLE_BLOCK;
     static const int NEAR_FILL_SPACE_BLOCK;
