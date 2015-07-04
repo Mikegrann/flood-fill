@@ -71,7 +71,7 @@ void FluidBox::update(){
 
     if(!visible) {
         timer += dTime * speed;
-        getBoundingBox()->setPosition(position - (1.0f - timer/1.55f) * glm::vec3(0, 2.0f, 0));
+        getBoundingBox()->setPosition(position - (1.0f - (float)timer / 1.55f) * glm::vec3(0, 2.0f, 0));
         if(timer > 1.55f) {
             visible = true;
             RenderEngine::getRenderGrid()->addObject(fluidBox, RenderEngine::getRenderElement("normalmap"));
@@ -129,7 +129,7 @@ void FluidBox::remotionAnimation(){
     float dTime = ((float) TimeManager::getDeltaTime());
 
     timer += dTime;
-    float timerP = timer * 2.0f;
+    double timerP = timer * 2.0;
     timerP *= timerP;
     fluidBox->loadIdentity();
     //fluidBox->scale(glm::vec3(1.0 - timerP, 1.0 - timerP, 1.0 - timerP));
@@ -153,7 +153,7 @@ void FluidBox::highlightForRemotion(){
     fluidBox->setTextureAndNormalMapPack(1);
 
     fluidBox->setMaterial(MaterialManager::getMaterial("removeBlock"));
-    fluidBox->setAlpha(0.3);
+    fluidBox->setAlpha(0.3f);
 
     RenderEngine::getRenderGrid()->removeObject(fluidBox);
     RenderEngine::getRenderGrid()->addObject(fluidBox, RenderEngine::getRenderElement("normalmap"));

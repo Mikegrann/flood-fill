@@ -377,8 +377,8 @@ void mouse_movement_callback(GLFWwindow *, double xpos, double ypos){
         lastY = ypos;
 
         float phi = cam->getPhi(), theta = cam->getTheta();
-        phi   -= yoffset * 360.0f / Global::ScreenHeight;
-        theta += xoffset * 360.0f / Global::ScreenWidth;
+        phi   -= (float)yoffset * 360.0f / Global::ScreenHeight;
+        theta += (float)xoffset * 360.0f / Global::ScreenWidth;
 
         if (phi > 80.0f)  phi =  80.0f;
         if (phi < -80.0f) phi = -80.0f;

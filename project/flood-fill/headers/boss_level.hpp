@@ -12,7 +12,7 @@ void update();
 private:
 void createRenders();
 LightPtr l1;
-float timer;
+double timer;
 glm::vec3 gridCenter;
 TextPtr levelTitle;
 ObjectPtr sky;

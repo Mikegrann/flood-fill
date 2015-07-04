@@ -73,7 +73,7 @@ void WaterRender::setupShader(){
 
     CameraPtr camera = Director::getScene()->getCamera();
 
-    glUniform2f(shader->getHandle("uScreenSize"), Global::FbWidth, Global::FbHeight);
+	glUniform2f(shader->getHandle("uScreenSize"), (GLfloat)Global::FbWidth, (GLfloat)Global::FbHeight);
 
     //Common information to all Objects
     glUniformMatrix4fv(shader->getHandle("uView"), 1, GL_FALSE,

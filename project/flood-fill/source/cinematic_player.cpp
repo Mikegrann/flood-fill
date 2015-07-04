@@ -33,10 +33,10 @@ void CinematicPlayer::update() {
     }
 
     if(active){
-        float cameraSpeed = 5.0f*TimeManager::getDeltaTime();
+        double cameraSpeed = 5.0f*TimeManager::getDeltaTime();
         timedTheta += TimeManager::getDeltaTime()/10;
-        camera->setTheta(theta + theta*timedTheta);
-        camera->strafe(Camera::RIGHT_DIRECTION, cameraSpeed);
+        camera->setTheta((float)(theta + theta*timedTheta));
+        camera->strafe(Camera::RIGHT_DIRECTION, (float)cameraSpeed);
 
     }
 }

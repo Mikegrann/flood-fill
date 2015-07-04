@@ -47,7 +47,7 @@ private:
     ColorChangePtr change;
 
     bool shootPressed;
-    float shootTimer;
+    double shootTimer;
 
     float walkAmount;
     float eyeOffset;

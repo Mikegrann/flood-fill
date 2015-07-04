@@ -67,14 +67,14 @@ FontAtlas::FontAtlas(FT_Face face, int pixelSize) {
         glTexSubImage2D(GL_TEXTURE_2D, 0, xOffset, yOffset, g->bitmap.width,
                         g->bitmap.rows, GL_RED, GL_UNSIGNED_BYTE, g->bitmap.buffer);
 
-        charInfo[i].advanceX = g->advance.x >> 6;
-        charInfo[i].advanceY = g->advance.y >> 6;
+		charInfo[i].advanceX = (float)(g->advance.x >> 6);
+        charInfo[i].advanceY = (float)(g->advance.y >> 6);
 
-        charInfo[i].bitWidth = g->bitmap.width;
-        charInfo[i].bitHeight = g->bitmap.rows;
+        charInfo[i].bitWidth = (float)g->bitmap.width;
+        charInfo[i].bitHeight = (float)g->bitmap.rows;
 
-        charInfo[i].bitLeft = g->bitmap_left;
-        charInfo[i].bitTop = g->bitmap_top;
+        charInfo[i].bitLeft = (float)g->bitmap_left;
+        charInfo[i].bitTop = (float)g->bitmap_top;
 
         charInfo[i].tex_offX = xOffset / (float)atlasWidth;
         charInfo[i].tex_offY = yOffset / (float)atlasHeight;
@@ -119,5 +119,5 @@ unsigned int FontAtlas::getLineHeight() {
 }
 
 void FontAtlas::addLineHeight(float val) {
-    lineHeight += val;
+    lineHeight += (int)val;
 }

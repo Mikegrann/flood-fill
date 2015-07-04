@@ -37,7 +37,7 @@ private:
 
   ObjectPtr fluidBox;
   std::string color;
-  float timer;
+  double timer;
   float speed;
   bool visible;
 

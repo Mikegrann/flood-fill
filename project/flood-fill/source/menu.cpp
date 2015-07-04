@@ -35,9 +35,9 @@ void Menu::setup(){
 
     MenuItemPtr title, quitButton;
     
-    title = (MenuItemPtr)new SwitchPageButton("levels","FLOOD_FILL", glm::vec4(0,0,0,.7), glm::vec4(0,0,1,1), glm::vec3(0,0,0), "FourPixel", 50 * Global::FbHeight/600.0);
+    title = (MenuItemPtr)new SwitchPageButton("levels","FLOOD_FILL", glm::vec4(0,0,0,0.7f), glm::vec4(0,0,1,1), glm::vec3(0,0,0), "FourPixel", 50 * Global::FbHeight / 600);
 
-    quitButton = (MenuItemPtr)new SwitchPageButton("", "QUIT", glm::vec4(0,0,0,.7), glm::vec4(1,0,0,1), glm::vec3(0,0,0), "FourPixel", 25 * Global::FbHeight/600.0);
+    quitButton = (MenuItemPtr)new SwitchPageButton("", "QUIT", glm::vec4(0,0,0,0.7f), glm::vec4(1,0,0,1), glm::vec3(0,0,0), "FourPixel", 25 * Global::FbHeight / 600);
 
     float pixelDensityX = (float)Global::FbWidth / Global::ScreenWidth;
 
@@ -58,19 +58,19 @@ void Menu::setup(){
 
     MenuItemPtr backButton, next, previous, level1, level2, level3, level4;
 
-    backButton = (MenuItemPtr)new SwitchPageButton("home","BACK", glm::vec4(0,0,0,.7), glm::vec4(1,0,0,1), glm::vec3(0, 0, 0), "FourPixel", 25 * Global::FbHeight/600.0);
+    backButton = (MenuItemPtr)new SwitchPageButton("home","BACK", glm::vec4(0,0,0,0.7f), glm::vec4(1,0,0,1), glm::vec3(0, 0, 0), "FourPixel", 25 * Global::FbHeight / 600);
     
-    level1 = (MenuItemPtr)new LevelButton(1, "Level1", glm::vec4(0,0,0,.7), glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight/600.0);
+    level1 = (MenuItemPtr)new LevelButton(1, "Level1", glm::vec4(0,0,0,0.7f), glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight / 600);
     
-    level2 = (MenuItemPtr)new LevelButton(2, "Level2", glm::vec4(0,0,0,.7), glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight/600.0);
+    level2 = (MenuItemPtr)new LevelButton(2, "Level2", glm::vec4(0,0,0,0.7f), glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight / 600);
 
-    level3 = (MenuItemPtr)new LevelButton(3, "Level3", glm::vec4(0,0,0,.7), glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight/600.0);
+    level3 = (MenuItemPtr)new LevelButton(3, "Level3", glm::vec4(0,0,0,0.7f), glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 37 * Global::FbHeight / 600);
 
-    //level4 = (MenuItemPtr)new LevelButton(4, "Boss", glm::vec4(0,0,0,.7), glm::vec4(1,0,1,1), glm::vec2(0,0), "FourPixel", 37 * Global::FbHeight/600.0);
+    //level4 = (MenuItemPtr)new LevelButton(4, "Boss", glm::vec4(0,0,0,0.7f), glm::vec4(1,0,1,1), glm::vec2(0,0,0), "FourPixel", 37 * Global::FbHeight / 600);
 
-    previous = (MenuItemPtr)new ListButton("levels", "previous", -1, "<<", glm::vec4(0,0,0,.2), glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 37 * Global::FbHeight/600.0);
+    previous = (MenuItemPtr)new ListButton("levels", "previous", -1, "<<", glm::vec4(0,0,0,0.2f), glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 37 * Global::FbHeight / 600);
     
-    next = (MenuItemPtr)new ListButton("levels", "next", 1, ">>", glm::vec4(0,0,0,.2), glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 37 * Global::FbHeight/600.0);
+    next = (MenuItemPtr)new ListButton("levels", "next", 1, ">>", glm::vec4(0,0,0,0.2f), glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 37 * Global::FbHeight / 600);
                                           
     
 
@@ -99,45 +99,45 @@ void Menu::setup(){
     
     userGuide = PagePtr(new Page());
 
-    MenuItemPtr comprehend = (MenuItemPtr)new SwitchPageButton("hide","OK!", glm::vec4(0,0,0,.7), glm::vec4(0,0,1,1), glm::vec3(0, 0, 0), "FourPixel", 30 * Global::FbHeight/600.0);
+    MenuItemPtr comprehend = (MenuItemPtr)new SwitchPageButton("hide","OK!", glm::vec4(0,0,0,.7), glm::vec4(0,0,1,1), glm::vec3(0, 0, 0), "FourPixel", 30 * Global::FbHeight / 600);
     comprehend->setPosition(glm::vec3(0 - comprehend->getTextWidth()/2.0/pixelDensityX, -0.8, 0));
     
     userGuide->addToPageButton("comprehend", comprehend);
 
-    TextPtr guideTitle = (TextPtr)new Text("User Guide", glm::vec4(0,0,0,1), glm::vec3(0,0,0), "FourPixel", 40 * Global::FbHeight/600.0);
+    TextPtr guideTitle = (TextPtr)new Text("User Guide", glm::vec4(0,0,0,1), glm::vec3(0,0,0), "FourPixel", 40 * Global::FbHeight / 600);
     guideTitle->setPosition(glm::vec3(0 - guideTitle->getTextWidth()/2.0/pixelDensityX, .75, 0));
 
     userGuide->addToPageInertText("guideTitle", guideTitle);
 
-    TextPtr blue = (TextPtr)new Text("BLUE", glm::vec4(0,0,1,1), glm::vec3(0,0,0), "FourPixel", 25*Global::FbHeight/600.0);
+    TextPtr blue = (TextPtr)new Text("BLUE", glm::vec4(0,0,1,1), glm::vec3(0,0,0), "FourPixel", 25 * Global::FbHeight / 600);
     blue->setPosition(glm::vec3(0 - blue->getTextWidth()/2.0/pixelDensityX - .25, .45, 0));
 
     userGuide->addToPageInertText("blue", blue);
     
-    TextPtr green = (TextPtr)new Text("RED", glm::vec4(1,0,0,1), glm::vec3(0,0,0), "FourPixel", 25*Global::FbHeight/600.0);
+    TextPtr green = (TextPtr)new Text("RED", glm::vec4(1,0,0,1), glm::vec3(0,0,0), "FourPixel", 25 * Global::FbHeight / 600);
     green->setPosition(glm::vec3(0 - green->getTextWidth()/2.0/pixelDensityX - .25, .35, 0));
     
     userGuide->addToPageInertText("green", green);
     
-    TextPtr red = (TextPtr)new Text("PURPLE", glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 25*Global::FbHeight/600.0);
+	TextPtr red = (TextPtr)new Text("PURPLE", glm::vec4(1,0,1,1), glm::vec3(0,0,0), "FourPixel", 25 * Global::FbHeight / 600);
     red->setPosition(glm::vec3(0 - red->getTextWidth()/2.0/pixelDensityX - .25, .25, 0));
 
     userGuide->addToPageInertText("red", red);
 
-    TextPtr assignments = (TextPtr)new Text("= JUMP\n= SPEED\n= SPEED + JUMP", glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 35*Global::FbHeight/600.0);
+    TextPtr assignments = (TextPtr)new Text("= JUMP\n= SPEED\n= SPEED + JUMP", glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 35 * Global::FbHeight / 600);
     assignments->setPosition(glm::vec3(0 - assignments->getTextWidth()/2.0/pixelDensityX + 1.22, .45, 0));
 
     userGuide->addToPageInertText("assignments", assignments);
 
-    TextPtr keybinds = (TextPtr)new Text("'Q' = TOGGLE COLOR\n'E' = TRIGGER SWITCH", glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 30*Global::FbHeight/600.0);
+    TextPtr keybinds = (TextPtr)new Text("'Q' = TOGGLE COLOR\n'E' = TRIGGER SWITCH", glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 30 * Global::FbHeight / 600);
     keybinds->setPosition(glm::vec3(0 - keybinds->getTextWidth()/2.0/pixelDensityX + 1, 0, 0));
     userGuide->addToPageInertText("keybinds", keybinds);
 
-    TextPtr info = (TextPtr)new Text("Fill and remove blocks of the color equipped\n\n\nin order to reach the end of the stage (!)", glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 28*Global::FbHeight/600.0);
+    TextPtr info = (TextPtr)new Text("Fill and remove blocks of the color equipped\n\n\nin order to reach the end of the stage (!)", glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 28 * Global::FbHeight / 600);
     info->setPosition(glm::vec3(0 - info->getTextWidth()/2.0/pixelDensityX + 2.2, -.3, 0));
     userGuide->addToPageInertText("info", info);
     
-    TextPtr mouse = (TextPtr)new Text("(LEFT/RIGHT MOUSE BUTTONS)", glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 30*Global::FbHeight/600.0);
+    TextPtr mouse = (TextPtr)new Text("(LEFT/RIGHT MOUSE BUTTONS)", glm::vec4(0,0,0,1), glm::vec3(0,0,0), "Courier", 30 * Global::FbHeight / 600);
     mouse->setPosition(glm::vec3(0 - mouse->getTextWidth()/2.0/pixelDensityX + .37, -.42, 0));
     userGuide->addToPageInertText("mouse", mouse);   
 

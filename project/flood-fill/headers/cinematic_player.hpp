@@ -10,9 +10,9 @@ DEF_PTR(CinematicPlayer, CinematicPlayerPtr);
 class CinematicPlayer: public GameObject{
 
 public:
-    float timer;
-    float timedTheta;
-    float theta;
+    double timer;
+	double timedTheta;
+	double theta;
 
     CinematicPlayer(CameraPtr _camera);
 

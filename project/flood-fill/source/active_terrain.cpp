@@ -38,7 +38,7 @@ void ActiveTerrain::update(){
     if(s->isOn() && active && !doneAnimating) {
         timer += TimeManager::getDeltaTime();
         for(std::list<SolidCubePtr>:: iterator it = solidCubes.begin(); it != solidCubes.end(); it++){
-            (*it)->animateFrom(glm::vec3(0.0f, 15.0f, 0.0f), timer);
+            (*it)->animateFrom(glm::vec3(0.0f, 15.0f, 0.0f), (float)timer);
         }
         if(timer > 1.0f) {
             doneAnimating = true;
@@ -64,7 +64,7 @@ void ActiveTerrain::update(){
                 re->addObject((*it)->getObject());
                 //RenderEngine::getRenderElement("shadow")->addObject((*it)->getObject());
                 CollisionManager::addCollisionObjectToGrid(*it);
-                (*it)->animateFrom(glm::vec3(0.0f, 15.0f, 0.0f), timer);
+                (*it)->animateFrom(glm::vec3(0.0f, 15.0f, 0.0f), (float)timer);
             }
             
             fillTypes->insert(LevelTemplate::TOGGLE_FILL);

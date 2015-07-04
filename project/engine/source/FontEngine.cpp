@@ -485,7 +485,7 @@ float FontEngine::getTextHeight(std::string text) {
     int newLineHeight = 0;
     for (unsigned int i = 0; i < text.length(); i++) {
         if (text[i] == '\n') {
-            newLineHeight += getLineHeight();
+            newLineHeight += (int)getLineHeight();
             continue;
         }
         float h = curAtlas->getCharInfo(text[i]).bitHeight * sy;
@@ -504,8 +504,8 @@ void FontEngine::adjustScaling(float &sx, float &sy) {
     //sy = 2.0 / baseYRes;
 
     // or to make fonts not scale with window:
-    sx = 2.0 / windowWidth;
-    sy = 2.0 / windowHeight;
+    sx = 2.0f / windowWidth;
+    sy = 2.0f / windowHeight;
 }
 
 void FontEngine::updateWindowSize(int width, int height) {

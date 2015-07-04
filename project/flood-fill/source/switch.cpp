@@ -60,7 +60,7 @@ void Switch::update(){
           triggered = !triggered;
           direction = -direction;
       } else {
-          theta += speed * direction * TimeManager::getDeltaTime() ;
+          theta += speed * direction * (float)TimeManager::getDeltaTime();
       }
   }    
   

@@ -20,7 +20,7 @@ Camera::Camera() : ready(false), fixMouse(false){
 
 Camera::Camera(glm::vec3 _eye, glm::vec3 _target, glm::vec3 _up)
     : eye(_eye), target(_target), up(_up), theta(-90.0f), phi(0.0f), ready(true),
-    projectionMatrixLoaded(false), fixedAxis(glm::vec3(UNFIXED_AXIS)), fixMouse(false){}
+    projectionMatrixLoaded(false), fixedAxis(glm::vec3((float)UNFIXED_AXIS)), fixMouse(false){}
 
 glm::mat4 Camera::getViewMatrix(){
     ASSERT(isReady(), "The camera base vectors missing!");
@@ -155,21 +155,21 @@ bool Camera::hasProjectionMatrix(){
 
 void Camera::fix(bool x, bool y, bool z){
     INFO("Camera fixed!");
-    fixedAxis = glm::vec3(UNFIXED_AXIS);
+    fixedAxis = glm::vec3((float)UNFIXED_AXIS);
 
-    if(x) fixedAxis.x = FIXED_AXIS;
-    if(y) fixedAxis.y = FIXED_AXIS;
-    if(z) fixedAxis.z = FIXED_AXIS;
+    if (x) fixedAxis.x = (float)FIXED_AXIS;
+	if (y) fixedAxis.y = (float)FIXED_AXIS;
+	if (z) fixedAxis.z = (float)FIXED_AXIS;
 }
 
 void Camera::fix(){
     INFO("Camera fixed!");
-    fixedAxis = glm::vec3(FIXED_AXIS);
+	fixedAxis = glm::vec3((float)FIXED_AXIS);
 }
 
 void Camera::unfix(){
     INFO("Camera unfixed!");
-    fixedAxis = glm::vec3(UNFIXED_AXIS);
+    fixedAxis = glm::vec3((float)UNFIXED_AXIS);
 }
 
 const int POSITVE_SIDE = 1;

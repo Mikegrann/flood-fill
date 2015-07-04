@@ -89,7 +89,7 @@ void Player::update() {
     if(!active) return;
     
     if (!Menu::isActive()) {
-    float dt = TimeManager::getDeltaTime();
+    double dt = TimeManager::getDeltaTime();
     if(dt > 0.04) {
         dt = 0.04; // prevent falling through blocks with low framerate
     }
@@ -97,53 +97,53 @@ void Player::update() {
     lastPosition = camera->getEye();
 
     if(isKeyPressed(GLFW_KEY_SPACE) && !jumping) {
-        velocity = .6 * jumpMultiplier;
-        camera->jump(velocity * 25.0 * dt);
+        velocity = 0.6f * jumpMultiplier;
+        camera->jump(velocity * 25.0f * (float)dt);
     }
     jumping = true;
     
     addMultiplier = false; 
   
     if(isKeyPressed(GLFW_KEY_W)){
-        forwardVelocity = fmin(forwardVelocity + 1.5 * dt , 0.25f - 0.07f * fabs(strafeVelocity));
+		forwardVelocity = fmin(forwardVelocity + 1.5f * (float)dt, 0.25f - 0.07f * fabs(strafeVelocity));
     } else if(forwardVelocity > 0.0f) {
-        forwardVelocity = fmax(forwardVelocity - 1.5 * dt , 0.0f);
+		forwardVelocity = fmax(forwardVelocity - 1.5f * (float)dt, 0.0f);
     }
     if(isKeyPressed(GLFW_KEY_S)){
-        forwardVelocity = fmax(forwardVelocity - 1.5 * dt , -0.25f + 0.07f * fabs(strafeVelocity));
+		forwardVelocity = fmax(forwardVelocity - 1.5f * (float)dt, -0.25f + 0.07f * fabs(strafeVelocity));
     } else if(forwardVelocity < 0.0f) {
-        forwardVelocity = fmin(forwardVelocity + 1.5 * dt , 0.0f);
+		forwardVelocity = fmin(forwardVelocity + 1.5f * (float)dt, 0.0f);
     }
     if(isKeyPressed(GLFW_KEY_D)){
-        strafeVelocity = fmin(strafeVelocity + 1.5 * dt , 0.25f - 0.07f * fabs(forwardVelocity));
+		strafeVelocity = fmin(strafeVelocity + 1.5f * (float)dt, 0.25f - 0.07f * fabs(forwardVelocity));
     } else if(strafeVelocity > 0.0f) {
-        strafeVelocity = fmax(strafeVelocity - 1.5 * dt , 0.0f);
+		strafeVelocity = fmax(strafeVelocity - 1.5f * (float)dt, 0.0f);
     }
     else if(isKeyPressed(GLFW_KEY_A)){
-        strafeVelocity = fmax(strafeVelocity - 1.5 * dt , -0.25f + 0.07f * fabs(forwardVelocity));
+		strafeVelocity = fmax(strafeVelocity - 1.5f * (float)dt, -0.25f + 0.07f * fabs(forwardVelocity));
     } else if(strafeVelocity < 0.0f) {
-        strafeVelocity = fmax(strafeVelocity - 1.5 * dt , 0.0f);
+		strafeVelocity = fmax(strafeVelocity - 1.5f * (float)dt, 0.0f);
     }
 
-    camera->zoom(Camera::FORWARD_DIRECTION, moveMultiplier * forwardVelocity * dt * 15.0f);
-    camera->strafe(Camera::RIGHT_DIRECTION, moveMultiplier * strafeVelocity * dt * 15.0f);
+	camera->zoom(Camera::FORWARD_DIRECTION, moveMultiplier * forwardVelocity * (float)dt * 15.0f);
+	camera->strafe(Camera::RIGHT_DIRECTION, moveMultiplier * strafeVelocity * (float)dt * 15.0f);
 
     walkAmount += forwardVelocity * forwardVelocity + strafeVelocity * strafeVelocity;
-    eyeOffset = 0.7 + 0.05f * sin(walkAmount * 2.0f);
+    eyeOffset = 0.7f + 0.05f * sin(walkAmount * 2.0f);
 
     if(isKeyPressed(GLFW_KEY_Q)){
-        if ( TimeManager::getTimeStamp() - hand->getToggleTime() > .2){
+        if ( TimeManager::getTimeStamp() - hand->getToggleTime() > 0.2){
             hand->changeColorMask();
         }
     }
 
     
     if(jumping) {
-        velocity += gravity * dt;
-        if(velocity < -0.5) {
-            velocity = -0.5;
+		velocity += gravity * (float)dt;
+        if(velocity < -0.5f) {
+            velocity = -0.5f;
         }
-        camera->jump(velocity * 25.0 * dt);
+		camera->jump(velocity * 25.0f * (float)dt);
     }
 
     getBoundingBox()->setPosition(camera->getEye() - glm::vec3(0,eyeOffset,0));
@@ -223,10 +223,10 @@ void Player::collided(CollisionObjectPtr collidedWith) {
 
     //Reseting multipliers from colored blocks
     if(!addMultiplier) {
-        if (moveMultiplier > 1.0) {
-            moveMultiplier -= .01;
+        if (moveMultiplier > 1.0f) {
+            moveMultiplier -= 0.01f;
         }
-        jumpMultiplier = 1;
+        jumpMultiplier = 1.0f;
     }
 
     //If on flat ground, jumping is done. 
@@ -321,7 +321,7 @@ void Player::pickFluidBoxesToRemove(){
     float gridCellSize = 2.0f;
     int nBlocks = removeFluidNumberBlocks;
 
-    for(float i = 1.0f; i <= removeFluidShootRange; i+=0.2){
+    for(float i = 1.0f; i <= removeFluidShootRange; i += 0.2f){
         glm::vec3 rayPos = p0 + direction*((float) i);
 
         INFO("Casting Ray to remove box: (" << rayPos.x << ", " << rayPos.y << ", " << rayPos.z << ")");
@@ -366,13 +366,13 @@ void Player::doCameraWarp(){
 
     float angleVelocity = 100;
     if(activateCameraWarp){
-        angleP += angleInc*angleVelocity*TimeManager::getDeltaTime();
+        angleP += angleInc * angleVelocity * (float)TimeManager::getDeltaTime();
         if(angleP >= anglePMax){
             angleP = anglePMax;
         }
     }
     else{
-        angleP -= angleInc*angleVelocity*TimeManager::getDeltaTime();
+		angleP -= angleInc * angleVelocity * (float)TimeManager::getDeltaTime();
         if(angleP <= anglePMin){
             angleP = anglePMin;
         }

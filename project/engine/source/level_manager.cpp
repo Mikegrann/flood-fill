@@ -15,7 +15,7 @@
 
 int curLevel = 1;
 bool LevelManager::levelFinished = false;
-float LevelManager::timeStamp = 0; 
+double LevelManager::timeStamp = 0; 
 std::string LevelManager::currentSound = "";
 //public:
 void LevelManager::nextLevel() {

@@ -26,7 +26,7 @@ private:
     glm::vec3 position;
     glm::vec3 size;
 
-    float timer;
+    double timer;
 
     float rotationAngle, rotationAngleIncrement;
 

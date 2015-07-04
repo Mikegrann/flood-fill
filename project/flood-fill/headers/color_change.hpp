@@ -28,7 +28,7 @@ private:
   glm::vec3 size;
   std::string color;
 
-  float timer;
+  double timer;
   int colorMask;
 };
 

@@ -56,7 +56,7 @@ void ColorChange::update(){
   timer += TimeManager::getDeltaTime();
   colorChange->loadIdentity();
   colorChange->scale(glm::vec3(.25, .25, .25) * (float)((cos(timer * 5.0) + 3.0) / 2.0));
-  colorChange->rotate(45.0 * timer, glm::vec3(0, 1.0, 0));
+  colorChange->rotate(45.0f * (float)timer, glm::vec3(0, 1.0, 0));
   colorChange->translate(position);
 
 }

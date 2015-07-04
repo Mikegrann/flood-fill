@@ -25,7 +25,7 @@ FluidProjectile::FluidProjectile(glm::vec3 _position,
   glm::vec3 _movementDirection, int _colorMask)
   : GameObject(), CollisionObject(_position),
 	position(_position), movementDirection(_movementDirection),
-	size(glm::vec3(0.1)) {
+	size(glm::vec3(0.1f)) {
     colorMask = _colorMask;
     if(_colorMask & BLUE)
       color = "FlatBlue";
@@ -57,7 +57,7 @@ void FluidProjectile::setup() {
   origPosition = position;
   oldPosition = position;
 
-  angle = 90.0 - glm::degrees(atan2(movementDirection.z, movementDirection.x));
+  angle = 90.0f - glm::degrees(atan2(movementDirection.z, movementDirection.x));
 
   setPosition(position);
   

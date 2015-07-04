@@ -18,8 +18,8 @@ glm::vec4 Text::getColor() { return color; }
 glm::vec3 Text::getPosition() { return position; }
 std::string Text::getFont() { return fontName; }
 int Text::getFontSize() { return fontSize; }
-float Text::getCharWidth() { return fontSize * 1.0 * (2.0 / Global::ScreenWidth); }
-float Text::getCharHeight() { return fontSize * 1.0 * (2.0 / Global::ScreenHeight); }
+float Text::getCharWidth() { return fontSize * 1.0f * (2.0f / Global::ScreenWidth); }
+float Text::getCharHeight() { return fontSize * 1.0f * (2.0f / Global::ScreenHeight); }
 float Text::getTextHeight() { return getCharHeight(); }
 
 float Text::getTextWidth() {

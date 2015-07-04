@@ -78,12 +78,12 @@ void Mesh::resize(){
     if (zExtent >= xExtent && zExtent >= yExtent) {
         maxExtent = zExtent;
     }
-    scaleX = 2.0 / maxExtent;
-    shiftX = minX + (xExtent / 2.0);
-    scaleY = 2.0 / maxExtent;
-    shiftY = minY + (yExtent / 2.0);
-    scaleZ = 2.0 / maxExtent;
-    shiftZ = minZ + (zExtent) / 2.0;
+    scaleX = 2.0f / maxExtent;
+    shiftX = minX + (xExtent / 2.0f);
+    scaleY = 2.0f / maxExtent;
+    shiftY = minY + (yExtent / 2.0f);
+    scaleZ = 2.0f / maxExtent;
+    shiftZ = minZ + (zExtent / 2.0f);
 
     //Go through all vertices shift and scale them
     for (size_t v = 0; v < vertices.size() / 3; v++) {

@@ -28,18 +28,18 @@ void DebugPlayer::update() {
     }
 
     if(active){
-        float cameraSpeed = 5.0f*TimeManager::getDeltaTime();
+        double cameraSpeed = 5.0f*TimeManager::getDeltaTime();
         if(glfwGetKey(Global::window, GLFW_KEY_W) == GLFW_PRESS){
-            camera->zoom(Camera::FORWARD_DIRECTION, cameraSpeed);
+            camera->zoom(Camera::FORWARD_DIRECTION, (float)cameraSpeed);
         }
         else if(glfwGetKey(Global::window, GLFW_KEY_S) == GLFW_PRESS){
-            camera->zoom(Camera::BACKWARD_DIRECTION, cameraSpeed);
+			camera->zoom(Camera::BACKWARD_DIRECTION, (float)cameraSpeed);
         }
         if(glfwGetKey(Global::window, GLFW_KEY_A) == GLFW_PRESS){
-            camera->strafe(Camera::LEFT_DIRECTION, cameraSpeed);
+			camera->strafe(Camera::LEFT_DIRECTION, (float)cameraSpeed);
         }
         else if(glfwGetKey(Global::window, GLFW_KEY_D) == GLFW_PRESS){
-            camera->strafe(Camera::RIGHT_DIRECTION, cameraSpeed);
+			camera->strafe(Camera::RIGHT_DIRECTION, (float)cameraSpeed);
         }
     }
 }

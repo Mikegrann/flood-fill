@@ -35,7 +35,7 @@ private:
     float speed;
 
     bool active;
-    float timer;
+    double timer;
     bool doneAnimating;
 
     std::set<int>* fillTypes;

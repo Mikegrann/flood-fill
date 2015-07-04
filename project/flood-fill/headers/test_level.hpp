@@ -20,7 +20,7 @@ public:
 private:
     void createRenders();
     LightPtr l1;
-    float timer;
+    double timer;
     bool includeCinema;
     glm::vec3 gridCenter;
     TextPtr levelTitle;

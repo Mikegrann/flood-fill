@@ -39,7 +39,7 @@ private:
   int colorMask;
   bool hasCollided;
   bool createdSurface;
-  float timer;
+  double timer;
   float angle;
   float totalTime;
 

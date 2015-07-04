@@ -178,10 +178,10 @@ unsigned int Image::writeBMP(std::string filename) {
 
     //bytes 14-53
     bmp.push_back(40); bmp.push_back(0); bmp.push_back(0); bmp.push_back(0);  //14: biSize
-    bmp.push_back(w % 256); bmp.push_back(w / 256); bmp.push_back(0); bmp.push_back(0); //18: biWidth
-    bmp.push_back(h % 256); bmp.push_back(h / 256); bmp.push_back(0); bmp.push_back(0); //22: biHeight
+	bmp.push_back((unsigned char)(w % 256)); bmp.push_back((unsigned char)(w / 256)); bmp.push_back(0); bmp.push_back(0); //18: biWidth
+	bmp.push_back((unsigned char)(h % 256)); bmp.push_back((unsigned char)(h / 256)); bmp.push_back(0); bmp.push_back(0); //22: biHeight
     bmp.push_back(1); bmp.push_back(0); //26: biPlanes
-    bmp.push_back(outputChannels * 8); bmp.push_back(0); //28: biBitCount
+	bmp.push_back((unsigned char)(outputChannels * 8)); bmp.push_back(0); //28: biBitCount
     bmp.push_back(0); bmp.push_back(0); bmp.push_back(0); bmp.push_back(0);  //30: biCompression
     bmp.push_back(0); bmp.push_back(0); bmp.push_back(0); bmp.push_back(0);  //34: biSizeImage
     bmp.push_back(0); bmp.push_back(0); bmp.push_back(0); bmp.push_back(0);  //38: biXPelsPerMeter
@@ -222,7 +222,7 @@ unsigned int Image::writeBMP(std::string filename) {
     bmp[2] = bmp.size() % 256;
     bmp[3] = (bmp.size() / 256) % 256;
     bmp[4] = (bmp.size() / 65536) % 256;
-    bmp[5] = bmp.size() / 16777216;
+	bmp[5] = (unsigned char)(bmp.size() / 16777216);
 
     lodepng::save_file(bmp, filename);
 
@@ -288,14 +288,14 @@ unsigned int Image::loadBMP() {
     size = width * height * 3;
 
     /*  read the planes */
-    planes = getshort(file);
+    planes = (unsigned short)getshort(file);
     if (planes != 1) {
         printf("Planes from %s is not 1: %u\n", path.c_str(), planes);
         return 1;
     }
 
     /*  read the bpp */
-    bpp = getshort(file);
+    bpp = (unsigned short)getshort(file);
     if (bpp != 24) {
         printf("Bpp from %s is not 24: %u\n", path.c_str(), bpp);
         return 1;

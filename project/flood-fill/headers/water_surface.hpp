@@ -54,7 +54,7 @@ private:
 
   float minX, maxX, minY, maxY, minZ, maxZ;
   glm::vec3 lowestPosition;
-  float timer;
+  double timer;
   float speed;
   float maxSpeed;
 

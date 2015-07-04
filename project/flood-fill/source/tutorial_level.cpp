@@ -161,7 +161,7 @@ void TutorialLevel::update(){
     if (!Menu::isActive()) {
         glm::vec4 titleColor = levelTitle->getColor();
         if(titleColor.w > 0){
-            titleColor.w -= TimeManager::getDeltaTime()*0.3;
+            titleColor.w -= (float)TimeManager::getDeltaTime() * 0.3f;
             levelTitle->setColor(titleColor);
         }
         if (Menu::isNovice() && !cinematicPlayer->isActive()) {

@@ -24,7 +24,7 @@ private:
   WaterSurfacePtr current;
   glm::vec3 nextPos;
   int nextColorMask;
-  float hasNextTimer;
+  double hasNextTimer;
 };
 
 #endif
