@@ -140,8 +140,9 @@ unsigned int Image::loadPNG(){
     error = lodepng_decode32_file(&pixels, &width, &height, path.c_str());
 
     //if there's an error, display it
-    if(error)
-        DEBUG("decoder error " << error << ": " << lodepng_error_text(error));
+	if (error) {
+		DEBUG("decoder error " << error << ": " << lodepng_error_text(error));
+	}
 
     return error;
 }
@@ -154,7 +155,9 @@ unsigned int Image::writePNG(std::string filename) {
     if(!error) lodepng_save_file(png, pngsize, filename.c_str());
 
     /*if there's an error, display it*/
-    if(error) DEBUG("error " << error << ": " << lodepng_error_text(error));
+	if (error) {
+		DEBUG("error " << error << ": " << lodepng_error_text(error));
+	}
 
     free(png);
 

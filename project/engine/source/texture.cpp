@@ -8,7 +8,9 @@ Texture::Texture() : created(false){}
 
 void Texture::createTextureFromImage(ImagePtr image, bool mipmap){
     INFO("Creating Texture From Image...");
-    if(created) DEBUG("Overriding Texture!");
+	if (created) {
+		DEBUG("Overriding Texture!");
+	}
 
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -57,7 +59,9 @@ void Texture::createTextureFromImage(ImagePtr image, bool mipmap){
 void Texture::createTexture(GLsizei width, GLsizei height, GLint internalformat,
                             GLenum format, GLenum type, bool mipmap){
     INFO("Creating Texture...");
-    if(created) DEBUG("Overriding Texture!");
+	if (created) {
+		DEBUG("Overriding Texture!");
+	}
 
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);

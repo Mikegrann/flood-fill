@@ -10,14 +10,18 @@ FBO::FBO() : depth(false), _hasDepthTexture(false), loaded(false) {}
 
 void FBO::addTexture(TexturePtr texture){
     INFO("Adding texture to FBO...");
-    if(loaded) DEBUG("You are trying to add a texture to a FBO that was already laoded!");
+	if (loaded) {
+		DEBUG("You are trying to add a texture to a FBO that was already laoded!");
+	}
 
     textures.push_back(texture);
 }
 
 void FBO::addDepthRenderBuffer(unsigned int width, unsigned int height){
     INFO("Adding depth render buffer to FBO...");
-    if(loaded) DEBUG("You are trying to add a depth buffer to a FBO that was already laoded!");
+	if (loaded) {
+		DEBUG("You are trying to add a depth buffer to a FBO that was already laoded!");
+	}
 
     _width = width;
     _height = height;
@@ -26,7 +30,9 @@ void FBO::addDepthRenderBuffer(unsigned int width, unsigned int height){
 
 void FBO::addDepthTexture(unsigned int width, unsigned int height){
     INFO("Adding depth texture to FBO...");
-    if(loaded) DEBUG("You are trying to add a depth buffer to a FBO that was already laoded!");
+	if (loaded) {
+		DEBUG("You are trying to add a depth buffer to a FBO that was already laoded!");
+	}
 
     depthTexture = TexturePtr(new Texture());
     depthTexture->createTexture(width, height, GL_DEPTH_COMPONENT16, GL_DEPTH_COMPONENT, GL_FLOAT);
@@ -39,7 +45,9 @@ void FBO::addDepthTexture(unsigned int width, unsigned int height){
 }
 
 void FBO::load(){
-    if(loaded) DEBUG("Overriding FBO! This FBO was already loaded once!");
+	if (loaded) {
+		DEBUG("Overriding FBO! This FBO was already loaded once!");
+	}
 
     INFO("Creating FBO...");
     glGenFramebuffersEXT(1, &id);

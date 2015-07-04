@@ -387,10 +387,12 @@ void mouse_movement_callback(GLFWwindow *, double xpos, double ypos){
     }
 }
 
+#ifndef NDEBUG
 void error_callback(int, const char* description)
 {
-    ASSERT(false, description);
+	ASSERT(false, description);
 }
+#endif
 
 void setupGLFW(){
     INFO("Initializing GLFW...");
@@ -402,7 +404,9 @@ void setupGLFW(){
         exit(EXIT_FAILURE);
     }
 
+#ifndef NDEBUG
     glfwSetErrorCallback(error_callback);
+#endif
 
     glfwWindowHint(GLFW_SAMPLES, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
