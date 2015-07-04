@@ -495,8 +495,8 @@ float FontEngine::getTextHeight(std::string text) {
 }
 
 void FontEngine::adjustScaling(float &sx, float &sy) {
-    const float baseXRes = 800.0;
-    const float baseYRes = 600.0;
+    //const float baseXRes = 800.0;
+    //const float baseYRes = 600.0;
 
     // this makes it so fonts scale with window
     // (and have same aspect ratio as window)
