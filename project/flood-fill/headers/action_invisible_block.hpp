@@ -1,8 +1,6 @@
 #ifndef ACTION_INVISIBLE_BLOCK_HPP
 #define ACTION_INVISIBLE_BLOCK_HPP
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include "game_object.hpp"

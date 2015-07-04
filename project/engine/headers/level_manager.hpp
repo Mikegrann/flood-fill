@@ -1,8 +1,6 @@
 #ifndef LEVEL_MANAGER_HPP
 #define LEVEL_MANAGER_HPP
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include "pointer_macros.h"

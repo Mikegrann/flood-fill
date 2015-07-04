@@ -1,8 +1,6 @@
 #ifndef LIGHT_HPP
 #define LIGHT_HPP
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include "pointer_macros.h"

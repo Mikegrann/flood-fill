@@ -6,8 +6,6 @@
 
 #include "GLIncludes.h"
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 #include "pointer_macros.h"
 

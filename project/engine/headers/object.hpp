@@ -1,8 +1,6 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include "mesh.hpp"

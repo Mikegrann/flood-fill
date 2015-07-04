@@ -1,8 +1,6 @@
 #ifndef PLANE_HPP
 #define PLANE_HPP
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include "object.hpp"

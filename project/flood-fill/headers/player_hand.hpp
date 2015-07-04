@@ -1,8 +1,6 @@
 #ifndef PLAYER_HAND_HPP
 #define PLAYER_HAND_HPP
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include "game_object.hpp"

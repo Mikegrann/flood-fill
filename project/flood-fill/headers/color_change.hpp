@@ -1,8 +1,6 @@
 #ifndef COLOR_CHANGE_HPP
 #define COLOR_CHANGE_HPP
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include "game_object.hpp"

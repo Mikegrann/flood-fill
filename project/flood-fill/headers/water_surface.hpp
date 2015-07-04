@@ -1,8 +1,6 @@
 #ifndef WATER_SURFACE_HPP
 #define WATER_SURFACE_HPP
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include <list>

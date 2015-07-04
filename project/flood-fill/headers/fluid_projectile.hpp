@@ -1,8 +1,6 @@
 #ifndef FLUID_PROJECTILE_HPP
 #define FLUID_PROJECTILE_HPP
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 #include <set>
 

@@ -4,8 +4,6 @@
 #include <iostream>
 #include "debug_macros.h"
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include "load_manager.hpp"

@@ -3,8 +3,6 @@
 
 #include <vector>
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include "game_object.hpp"

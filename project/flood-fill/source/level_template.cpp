@@ -9,8 +9,6 @@
 #include <vector>
 #include <sstream>
 
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_PURE
 #include "glm/glm.hpp"
 
 #include "solid_cube.hpp"
