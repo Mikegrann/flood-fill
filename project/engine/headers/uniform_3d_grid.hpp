@@ -159,7 +159,7 @@ Uniform3DGrid<T>::~Uniform3DGrid(){
 
 template<typename T>
 void Uniform3DGrid<T>::initialize(const T& value){
-    for ( int i = 0; i < sizeX*sizeY*sizeZ; i++) {
+    for (unsigned int i = 0; i < sizeX * sizeY * sizeZ; i++) {
         grid[i] = value;
     }
 }
