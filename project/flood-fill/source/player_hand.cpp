@@ -44,11 +44,12 @@ void PlayerHand::setPosition(glm::vec3 _position) {
 }
 
 void PlayerHand::collided(CollisionObjectPtr collidedWith){
-  
-  switch (collidedWith->getCollisionID()){
-  default:
-	break;
-  } 
+	/*
+	switch (collidedWith->getCollisionID()){
+		default:
+		break;
+	}
+	*/
 }
 
 void PlayerHand::setColorMask(int color) {

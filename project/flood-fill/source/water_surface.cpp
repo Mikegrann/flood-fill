@@ -268,11 +268,12 @@ float WaterSurface::floodFillTarget(glm::vec3 newPos, float lowestY) {
 }
 
 void WaterSurface::collided(CollisionObjectPtr collidedWith){
-  
-  switch (collidedWith->getCollisionID()){
-  default:
-    break;
-  } 
+	/*
+	switch (collidedWith->getCollisionID()){
+		default:
+		break;
+	} 
+	*/
 }
 
 void WaterSurface::loadShaders() {

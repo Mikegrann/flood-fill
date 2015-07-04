@@ -47,9 +47,10 @@ void Box::update(){
 }
 
 void Box::collided(CollisionObjectPtr collidedWith){
-  
-  switch (collidedWith->getCollisionID()){
-  default:
-	break;
-  } 
+	/*
+	switch (collidedWith->getCollisionID()){
+		default:
+		break;
+	} 
+	*/
 }
